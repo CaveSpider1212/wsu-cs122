@@ -1,0 +1,3 @@
+High score: 99
+Low score: 36
+Mean: 75.6
