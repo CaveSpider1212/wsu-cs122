@@ -7,33 +7,12 @@
 *				students from a text file, mark students absent, and generate reports.
 */
 
-#include "Header.hpp"
+#include "Menu.hpp"
 
 int main(void)
 {
-	int menuChoice = 0;
-	
-	while (menuChoice != 7) {
-		cout << "Choose a menu option from below:" << endl;
-		cout << "1) Import course list\n2) Load master list\n3) Store master list\n4) Mark absences\n5) Edit absences\n6) Generate report\n7) Exit" << endl;
-		cin >> menuChoice;
-
-		switch (menuChoice) {
-		case 1:
-			importCourseList();
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		}
-	}
+	Menu m;
+	m.start();
 
 	return 0;
 }

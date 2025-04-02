@@ -15,6 +15,8 @@ public:
 
 	T getData() const;
 	Node* getNextPtr() const;
+
+	void setNextPtr(Node* pNext);
 private:
 	T data;
 	Node* pNext;
@@ -34,4 +36,12 @@ template <class T>
 Node<T>* Node<T>::getNextPtr() const
 {
 	return pNext;
+}
+
+// created 4/2/2025
+// done
+template<class T>
+void Node<T>::setNextPtr(Node* pNext)
+{
+	this->pNext = pNext;
 }
