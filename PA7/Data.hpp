@@ -16,7 +16,15 @@ using std::ios;
 
 class Data {
 public:
-	Data(int recordNumber, int idNumber, string name, string email, string units, string program, string level);
+	Data(int recordNumber = 0, int idNumber = 0, string name = "", string email = "", string units = "", string program = "", string level = "");
+
+	int getRecordNumber() const;
+	int getIdNumber() const;
+	int getNumAbsences() const;
+	string getName() const;
+	string getEmail() const;
+	string getProgram() const;
+	string getLevel() const;
 private:
 	int recordNumber, idNumber, numAbsences;
 	string name, email, units, program, level;

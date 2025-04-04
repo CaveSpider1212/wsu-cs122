@@ -37,8 +37,11 @@ void Menu::start()
 }
 
 // created 4/2/2025
+// done, could maybe split into another function
 void Menu::importCourseList()
 {
+	masterList.deleteList();
+
 	ifstream courseListFile;
 	courseListFile.open("classList.csv", ios::in);
 
@@ -53,10 +56,10 @@ void Menu::importCourseList()
 		getline(ss, token, ',');
 		int recordNum = stoi(token);
 
-		getline(ss, token, ',');
+		getline(ss, token, '"');
 		int id = stoi(token);
 
-		getline(ss, token, ',');
+		getline(ss, token, '"');
 		string name = token;
 
 		getline(ss, token, ',');
@@ -72,7 +75,7 @@ void Menu::importCourseList()
 		string level = token;
 
 		Data newStudentData(recordNum, id, name, email, units, program, level);
-
+		masterList.insert(newStudentData);
 	}
 
 	courseListFile.close();

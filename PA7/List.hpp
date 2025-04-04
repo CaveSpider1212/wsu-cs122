@@ -20,9 +20,13 @@ public:
 
 	void setHeadPtr(Node<T>* pHead);
 
-	void insertAtFront(Data& newData);
+	void insert(Data& newData);
+	void deleteList();
 private:
-	Node* pHead;
+	Node<T>* pHead;
+
+	void insertAtFront(Data& newData);
+	void deleteNode(Node<T>* pDelete);
 };
 
 // created 4/2/2025
@@ -44,6 +48,27 @@ void List<T>::setHeadPtr(Node<T>* pHead)
 // created 4/2/2025
 // done
 template<class T>
+inline void List<T>::insert(Data& newData)
+{
+	insertAtFront(newData);
+}
+
+// created 4/3/2025
+// done
+template<class T>
+void List<T>::deleteList()
+{
+	Node<T>* pCur = pHead;
+
+	while (pCur != nullptr) {
+		deleteNode(pCur);
+		pCur = pCur->getNextPtr();
+	}
+}
+
+// created 4/2/2025
+// done
+template<class T>
 void List<T>::insertAtFront(Data& newData)
 {
 	Node<T>* pMem = new Node<T>(newData);
@@ -55,6 +80,15 @@ void List<T>::insertAtFront(Data& newData)
 		pMem->setNextPtr(pHead);
 		pHead = pMem;
 	}
+}
+
+// created 4/3/2025
+template<class T>
+void List<T>::deleteNode(Node<T>* pDelete)
+{
+	pHead = pDelete->getNextPtr();
+	pDelete->setNextPtr(nullptr);
+	delete pDelete;
 }
 
 

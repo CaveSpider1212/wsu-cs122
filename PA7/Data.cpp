@@ -21,3 +21,52 @@ Data::Data(int recordNumber, int idNumber, string name, string email, string uni
 	this->program = program;
 	this->level = level;
 }
+
+// created 4/3/2025
+// done
+int Data::getRecordNumber() const
+{
+	return recordNumber;
+}
+
+// created 4/3/2025
+// done
+int Data::getIdNumber() const
+{
+	return idNumber;
+}
+
+// created 4/3/2025
+// done
+int Data::getNumAbsences() const
+{
+	return numAbsences;
+}
+
+// created 4/3/2025
+// done
+string Data::getName() const
+{
+	return name;
+}
+
+// created 4/3/2025
+// done
+string Data::getEmail() const
+{
+	return email;
+}
+
+// created 4/3/2025
+// done
+string Data::getProgram() const
+{
+	return program;
+}
+
+// created 4/3/2025
+// done
+string Data::getLevel() const
+{
+	return level;
+}

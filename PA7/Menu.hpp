@@ -10,6 +10,7 @@
 
 #include "Data.hpp"
 #include "Node.hpp"
+#include "List.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -29,6 +30,8 @@ class Menu {
 public:
 	void start();
 private:
+	List<Data> masterList;
+
 	void importCourseList();
 	void loadMasterList();
 	void storeMasterList();
