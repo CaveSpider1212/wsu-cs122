@@ -13,7 +13,7 @@ class Node {
 public:
 	Node(const T& newData) : data(newData), pNext(nullptr) {};
 
-	T getData() const;
+	T& getData();
 	Node* getNextPtr() const;
 
 	void setNextPtr(Node* pNext);
@@ -22,24 +22,51 @@ private:
 	Node* pNext;
 };
 
-// created 3/31/2025
-// done
+
+
+
+/*
+* Function name: Node<T>::getData()
+* Programmer: Aabhwan Adhikary
+* Created: 3/31/2025
+* Description: Getter function for data
+* Input parameters: None
+* Returns: T data (template, which will be replaced by the Data class)
+*/
 template<class T>
-T Node<T>::getData() const
+T& Node<T>::getData()
 {
 	return data;
 }
 
-// created 3/31/2025
-// done
+
+
+
+/*
+* Function name: Node<T>::getNextPtr()
+* Programmer: Aabhwan Adhikary
+* Created: 3/31/2025
+* Description: Getter function for pNext (returns the next pointer of this Node)
+* Input parameters: None
+* Returns: Node<T> *pNext;
+*/
 template <class T>
 Node<T>* Node<T>::getNextPtr() const
 {
 	return pNext;
 }
 
-// created 4/2/2025
-// done
+
+
+
+/*
+* Function name: Node<T>::setNextPtr()
+* Programmer: Aabhwan Adhikary
+* Created: 4/2/2025
+* Description: Setter function for pNext (sets this Node's next pointer)
+* Input parameters: Node *pNext is the next pointer to this Node
+* Returns: None
+*/
 template<class T>
 void Node<T>::setNextPtr(Node* pNext)
 {

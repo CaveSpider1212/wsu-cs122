@@ -8,6 +8,8 @@
 
 #pragma once
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "Data.hpp"
 #include "Node.hpp"
 #include "List.hpp"
@@ -21,6 +23,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 using std::ifstream;
+using std::ofstream;
 using std::ios;
 using std::getline;
 using std::string;
@@ -32,10 +35,16 @@ public:
 private:
 	List<Data> masterList;
 
+	// menu operations
 	void importCourseList();
 	void loadMasterList();
 	void storeMasterList();
 	void markAbsences();
-	void editAbsences();
 	void generateReport();
+
+	// helper functions
+	void readDataValues(string line, int* recordNum, int* id, string *name, string *email, string *units, string *program, string *level, int *numAbsences, std::stack<string>& absenceDates, bool readingDates);
+	void displayAllStudents();
+	void displaySomeStudents();
+	void markStudentAsAbsent(Node<Data>* pCur);
 };
